@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Hours Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>When Can I Leave?</h1>
+      <p class="subtitle">Stay on schedule</p>
+    </header>
+    
+    <div class="card">
+      <div class="input-group">
+        <label for="startTime">Arrival Time</label>
+        <input type="time" id="startTime" required>
+      </div>
+
+      <div class="input-group">
+        <label>Shift Duration</label>
+        <div class="time-inputs">
+          <div class="time-field">
+            <input type="number" id="workHours" min="0" max="23" placeholder="08">
+            <span class="unit">Hrs</span>
+          </div>
+          <div class="time-field">
+            <input type="number" id="workMinutes" min="0" max="59" placeholder="00">
+            <span class="unit">Min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings">
+        <div class="switch-row">
+          <label class="switch">
+            <input type="checkbox" id="notify">
+            <span class="slider round"></span>
+          </label>
+          <span class="label-text"> Allow Notification Alert ⏰</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="calculateBtn" class="btn primary">Calculate</button>
+        <button id="resetBtn" class="btn secondary">Reset</button>
+      </div>
+    </div>
+
+    <div id="result" class="result-box hidden">
+      <h3>You can leave at</h3>
+      <div id="logoutTime" class="time-text">--:--</div>
+      <div class="badge">Active Timer</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
